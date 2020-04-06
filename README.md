@@ -1,14 +1,16 @@
 # JuniorTutorial
 
-ROS & Git introductory challenge for the interested Juniors to work their way through.
+This is a ROS & Git introductory challenge for the interested Juniors to work their way through.
 
 Before Juniors can begin work on the autonomous car we need to develop some basic skills with 
 * ROS
 * GIT
 * C++ and python
+
 This challenge aims to help you do that. 
 
 The idea is that after doing this you will be able to contribute here: https://github.com/MURDriverless
+
 ### ROS intro
 
 ROS is the Robot Operating System, and is the core _middleware_ that we will be using for the driverless car. Knowing how to use it is critical. 
