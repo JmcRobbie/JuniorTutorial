@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="JuniorTutorial" name="pub_rint1" type="pub_rint.py" args="1"/>
+  <node pkg="JuniorTutorial" name="pub_rint2" type="pub_rint.py" args="2"/>
+  <node pkg="JuniorTutorial" name="listener" type="listener.py" output="screen"/>
+
+</launch>
