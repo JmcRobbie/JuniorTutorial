@@ -1,5 +1,9 @@
 # JuniorTutorial
 
+Edit [Andrew Shen]: Launch the nodes using the launchfile JuniorTutorial.launch: 
+
+```roslauch JuniorTutorial JuniorTutorial.launch``` 
+
 This is a ROS & Git introductory challenge for the interested Juniors to work their way through.
 
 Before Juniors can begin work on the autonomous car we need to develop some basic skills with 
