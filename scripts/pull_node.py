@@ -72,11 +72,12 @@ def main():
 		if small_prime and not both_prime:
 			print "The smaller number is: {} and it is prime".format(small_num)
 
+		elif isprime(large_num):
+			print "The larger number is: {} and it is prime".format(large_num)
 		else:
 			print "The larger number is: {}".format(large_num)
 
 		rate.sleep()
-
 
 if __name__ == "__main__":
 	main()
