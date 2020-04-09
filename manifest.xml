@@ -1,0 +1,15 @@
+<package>
+  <description brief="MUR_JuniorTutorial">
+
+     First Junior Challenege 3 nodes talking to each other.
+
+  </description>
+  <author>Peter Stulpner, pstulpner@student.unimelb.edu.au</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/MUR_JuniorTutorial</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+
+</package>
