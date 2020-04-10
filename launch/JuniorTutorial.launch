@@ -1,5 +1,5 @@
 <launch>
-	<node pkg="JuniorTutorial" type="push_node1.py" name="Push_Node_1"/>
-	<node pkg="JuniorTutorial" type="push_node2.py" name="Push_Node_2"/>
-	<node pkg="JuniorTutorial" type="pull_node.py" name="Pull_Node" output="screen"/>
+	<node pkg="JuniorTutorial" type="push_node.py" name="Push_Node_1" args="1"/>
+	<node pkg="JuniorTutorial" type="push_node.py" name="Push_Node_2" args="2"/>
+	<node pkg="JuniorTutorial" type="pull_node.py" name="Pull_Node" args="2" output="screen"/>
 </launch>

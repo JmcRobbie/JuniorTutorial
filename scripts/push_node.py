@@ -4,8 +4,9 @@
 
 import rospy
 from std_msgs.msg import String
-from random import seed
 from random import randint
+from sys import argv
+from sys import exit
 
 def rand_int_generator(i, j):
 	'''Function returns a random integer from 1 to 1000 '''
@@ -14,10 +15,14 @@ def rand_int_generator(i, j):
 def main():
 
 	# Initialise the publisher
-	pub = rospy.Publisher("first_num", String, queue_size=19)
+	try: 
+		pub = rospy.Publisher("num_" + argv[1], String, queue_size=10)
+	except IndexError:
+		print "Error no argument"
+		exit(1)
 
 	# Initialise the node
-	rospy.init_node("push_node1", anonymous=True)
+	rospy.init_node("push_node", anonymous=True)
 
 	rate = rospy.Rate(1) #1Hz
 

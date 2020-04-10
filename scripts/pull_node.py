@@ -3,11 +3,10 @@
 
 import rospy
 from std_msgs.msg import String
+from sys import argv
+from sys import exit
 
-# Global variables:
-node_1_num = 0
-node_2_num = 0
-
+node_num = dict()
 
 def isprime(n):
 	'''Function takes an integer n and returns True if prime and False otherwise '''
@@ -26,22 +25,27 @@ def isprime(n):
 
 	return True
 
-def callback_1(msg):
-	global node_1_num
+def callback(msg, arg):
+	global node_num
 #	rospy.loginfo(msg.data)
-	node_1_num = int(msg.data)
+	message_data = int(msg.data)
+	node_num["Node " + str(arg)] = message_data
 
-
-def callback_2(msg):
-	global node_2_num
-#	rospy.loginfo(msg.data)
-	node_2_num = int(msg.data)
 
 def main():
 	'''Function creates the node which recieves the 2 integers '''
+	global node_num
 
-	global node_1_num
-	global node_2_nun
+	num_topic = 0
+
+	# See how many topic need to subscribe to:
+	try:
+		num_topic = int(argv[1])
+
+	except:
+		print "Error no arguments supplied"
+		exit(1)
+
 
 	# Initialise the node:
 	rospy.init_node("pull_node", anonymous=True)
@@ -50,17 +54,20 @@ def main():
 	rate = rospy.Rate(1) # 1Hz
 
 	# Subscribe it to the other nodes:
-	rospy.Subscriber("first_num", String, callback_1)
-	rospy.Subscriber("second_num", String, callback_2)
+	for i in range(0, num_topic):
+		node_num["Node " + str(i + 1)] = 0
+		rospy.Subscriber("num_" + str(i+1), String, callback, (i+ 1))
+
+#	print "Number of topics: {}".format(num_topic)
+#	print "Node num dictionary: {}".format(node_num)
 
 	while not rospy.is_shutdown():
-#		print "Node 1: {} Node 2: {}".format(node_1_num, node_2_num)
 		both_prime = False
 		small_prime = False
 
 		# Find the smaller and larger number:
-		small_num = node_1_num if node_1_num <= node_2_num else node_2_num
-		large_num = node_1_num if small_num != node_1_num else node_2_num
+		small_num = min(node_num.values())
+		large_num = max(node_num.values())
 
 		# Check to see if small is prime:
 		if isprime(small_num):
@@ -69,6 +76,9 @@ def main():
 				both_prime = True
 
 		# Print results:
+		print "Node Values: {}".format(node_num) 
+		print " ------------ "
+		print "The smallest and largest number are: {} {}".format(small_num, large_num) 
 		if small_prime and not both_prime:
 			print "The smaller number is: {} and it is prime".format(small_num)
 
@@ -77,6 +87,7 @@ def main():
 		else:
 			print "The larger number is: {}".format(large_num)
 
+		print " ---------- "
 		rate.sleep()
 
 if __name__ == "__main__":
