@@ -19,7 +19,6 @@ class Two_Integers:
 
     def print_int(self):
         if self.int1 and self.int2:
-            rospy.loginfo("Integers: "+ str(self.int1)+ ", "+str(self.int2))
             smaller,larger = min(self.int1,self.int2),max(self.int1,self.int2)
             if is_prime(smaller) and not is_prime(larger):
                 rospy.loginfo("The integer printed is %s", str(smaller))
@@ -34,11 +33,8 @@ def is_prime(num):
             return False
     return True
 
-def callback(data):
-    rospy.loginfo(data)
-
-def node3():
-    rospy.init_node('node3', anonymous=True)
+def subscriber():
+    rospy.init_node('sub_node', anonymous=True)
     
     two_ints = Two_Integers()
 
@@ -48,5 +44,5 @@ def node3():
     rospy.spin()
 
 if __name__ == '__main__':
-    node3()
+    subscriber()
 

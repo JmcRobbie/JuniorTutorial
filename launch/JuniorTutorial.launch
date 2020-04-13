@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="JuniorTutorial" name="pub_node1" type="publisher.py" args="1"/>
+  <node pkg="JuniorTutorial" name="pub_node2" type="publisher.py" args="2"/>
+  <node pkg="JuniorTutorial" name="sub_node" type="subscriber.py"/>
+</launch>
