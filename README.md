@@ -1,12 +1,12 @@
 # JuniorTutorial
-Run the following commands:
-
+Run the following command:
+```
 $ roslaunch JuniorTutorial JuniorTutorial.launch
-
+```
 To see the logs:
-
+```
 $ rosrun rqt_console rqt_console
-
+```
 
 
 This is a ROS & Git introductory challenge for the interested Juniors to work their way through.
