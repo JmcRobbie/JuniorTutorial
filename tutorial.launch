@@ -1,0 +1,21 @@
+<launch>
+
+    <node
+        pkg="JuniorTutorial"
+        type="listener"
+        name=
+    />
+
+    <node
+        pkg="JuniorTutorial"
+        type="talker"
+        name="pub_node1"
+    />
+
+    <node
+        pkg="JuniorTutorial"
+        type="talker2"
+        name="pub_node2"
+    />
+
+</launch>
