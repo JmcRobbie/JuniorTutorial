@@ -68,9 +68,11 @@ class numSelector {
         }
                
     }
-}
+};
 
 int main(int argc, char **argv) {
+
+    numSelector numSelector;
     ros::init(argc, argv, "listener");
 
     ros::NodeHandle nh;
