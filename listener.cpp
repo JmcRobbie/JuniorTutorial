@@ -10,12 +10,12 @@ class numSelector {
 
      void topic1CallBack(const std_msgs::Int32::ConstPtr& num) {
         first_topic_num = num->data;
-        ROS_INFO("Topic 1 said: %d",first_topic_num)
+        ROS_INFO("Topic 1 said: %d",first_topic_num);
     }
 
     void topic2CallBack(const std_msgs::Int32::ConstPtr& num) {
         second_topic_num = num->data;
-        ROS_INFO("Topic 2 said: %d", second_topic_num)
+        ROS_INFO("Topic 2 said: %d", second_topic_num);
     }
 
     bool isPrime(int num) {
@@ -77,8 +77,8 @@ int main(int argc, char **argv) {
 
     ros::NodeHandle nh;
 
-    ros::Subscriber sub1 = nh.subscribe("topic1", 1000, numSelector.topic1CallBack);
-    ros::Subscriber sub2 = nh.subscribe("topic2", 1000, numSelector.topic2CallBack);
+    ros::Subscriber sub1 = nh.subscribe("topic1", 1000, numSelector.topic1CallBack());
+    ros::Subscriber sub2 = nh.subscribe("topic2", 1000, numSelector.topic2CallBack());
 
     int result;
     result = numSelector.process_nums();
