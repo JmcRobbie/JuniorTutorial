@@ -81,12 +81,12 @@ int main(int argc, char **argv) {
     ros::Subscriber sub2 = nh.subscribe("topic2", 1000, &NumSelector::topic2CallBack, &numSelector);
     ros::Rate loop_rate(2);
     while (ros::ok()) {
-        
+        ros::spinOnce();
         int result;
         result = numSelector.process_nums();
-        ROS_INFO("Hello");
+        
         ROS_INFO("Result: %d", result);
-        ros::spinOnce();
+        
         loop_rate.sleep();
     }
 
