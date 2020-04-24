@@ -17,8 +17,8 @@ int main(int argc, char **argv) {
     {
         std_msgs::Int32 num;
 
-        num = Int32(rand() % 1000 + 1);
-        ROS_INFO("topic 2: %d", num);
+        num.data = rand() % 1000 + 1;
+        ROS_INFO("topic 2: %d", num.data);
         pub.publish(num);
         ros::spinOnce();
         rate.sleep();
