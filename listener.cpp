@@ -84,6 +84,7 @@ int main(int argc, char **argv) {
         
         int result;
         result = numSelector.process_nums();
+        ROS_INFO("Hello");
         ROS_INFO("Result: %d", result);
         ros::spinOnce();
         loop_rate.sleep();
