@@ -80,10 +80,15 @@ int main(int argc, char **argv) {
     ros::Subscriber sub1 = nh.subscribe("topic1", 1000, &NumSelector::topic1CallBack, &numSelector);
     ros::Subscriber sub2 = nh.subscribe("topic2", 1000, &NumSelector::topic2CallBack, &numSelector);
 
+    while (ros::ok()) {
+
     int result;
     result = numSelector.process_nums();
     ROS_INFO("Result: %d", result);
+    }
     ros::spin();
 
     return 0;
+
+    
 }
