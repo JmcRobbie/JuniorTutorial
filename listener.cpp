@@ -2,7 +2,7 @@
 #include "std_msgs/Int32.h"
 
 
-class numSelector {
+class NumSelector {
 
     public:
         int first_topic_num;
@@ -72,13 +72,13 @@ class numSelector {
 
 int main(int argc, char **argv) {
 
-    numSelector numSelector;
+    NumSelector numSelector;
     ros::init(argc, argv, "listener");
 
     ros::NodeHandle nh;
 
-    ros::Subscriber sub1 = nh.subscribe("topic1", 1000, numSelector.topic1CallBack());
-    ros::Subscriber sub2 = nh.subscribe("topic2", 1000, numSelector.topic2CallBack());
+    ros::Subscriber sub1 = nh.subscribe("topic1", 1000, &NumSelector::topic1callback, &numSelector);
+    ros::Subscriber sub2 = nh.subscribe("topic2", 1000, &NumSelector::topic2callback, &numSelector);
 
     int result;
     result = numSelector.process_nums();
