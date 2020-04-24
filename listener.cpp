@@ -19,7 +19,7 @@ class numSelector {
     }
 
     bool isPrime(int num) {
-        for (i = 2; i <= num/2; i++) {
+        for (int i = 2; i <= num/2; i++) {
             if (num % i == 0)
             {
                 return false;
@@ -32,7 +32,7 @@ class numSelector {
     }
 
     int process_nums() {
-        if ((first_topic_num > second_topic_num) {
+        if (first_topic_num > second_topic_num) {
             if (isPrime(first_topic_num) && isPrime(second_topic_num))
             {
                 return first_topic_num;
