@@ -9,12 +9,12 @@ class numSelector {
         int second_topic_num;
 
      void topic1CallBack(const std_msgs::Int32::ConstPtr& num) {
-        first_topic_num = num.data;
+        first_topic_num = num->data;
         ROS_INFO("Topic 1 said: %d",first_topic_num)
     }
 
     void topic2CallBack(const std_msgs::Int32::ConstPtr& num) {
-        second_topic_num = num.data;
+        second_topic_num = num->data;
         ROS_INFO("Topic 2 said: %d", second_topic_num)
     }
 
