@@ -5,7 +5,7 @@
 
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "pub_node1");
+    ros::init(argc, argv, "pub_node2");
     ros::NodeHandle nh;
 
     ros::Publisher pub = nh.advertise<std_msgs::Int32>("topic2", 1000);
