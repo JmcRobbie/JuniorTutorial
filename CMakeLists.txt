@@ -17,14 +17,14 @@ catkin_package()
 ## Build talker and listener
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(talker src/JuniorTutorial/talker.cpp)
+add_executable(talker JuniorTutorial/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 add_dependencies(talker JuniorTutorial_generate_messages_cpp)
 
-add_executable(talker2 src/JuniorTutorial/talker2.cpp)
+add_executable(talker2 JuniorTutorial/talker2.cpp)
 target_link_libraries(talker2 ${catkin_LIBRARIES})
 add_dependencies(talker2 JuniorTutorial_generate_messages_cpp)
 
-add_executable(listener src/JuniorTutorial/listener.cpp)
+add_executable(listener JuniorTutorial/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener JuniorTutorial_generate_messages_cpp)
