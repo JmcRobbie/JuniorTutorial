@@ -21,9 +21,9 @@ add_executable(talker talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 add_dependencies(talker JuniorTutorial_generate_messages_cpp)
 
-add_executable(talker2 talker2.cpp)
-target_link_libraries(talker2 ${catkin_LIBRARIES})
-add_dependencies(talker2 JuniorTutorial_generate_messages_cpp)
+#add_executable(talker2 talker2.cpp)
+#target_link_libraries(talker2 ${catkin_LIBRARIES})
+#add_dependencies(talker2 JuniorTutorial_generate_messages_cpp)
 
 add_executable(listener listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})

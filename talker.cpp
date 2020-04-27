@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh;
 
     //advertise to topic1
-    ros::Publisher pub = nh.advertise<std_msgs::Int32>("topic1", 1000);
+    ros::Publisher pub = nh.advertise<std_msgs::Int32>(argv[1], 1000);
     //random number seed
     srand(time(0));
     ros::Rate rate(2);

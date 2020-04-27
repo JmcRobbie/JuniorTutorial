@@ -20,6 +20,11 @@ class NumSelector {
     }
     //helper function to check if a number is prime
     bool isPrime(int num) {
+
+        if (num == 1 || num == 0) {
+            return false;
+        }
+        
         for (int i = 2; i <= num/2; i++) {
             if (num % i == 0)
             {
@@ -66,6 +71,10 @@ class NumSelector {
             {
                 return second_topic_num;
             }  
+        }
+        //if both are equal, return any one of them
+        else {
+            return first_topic_num;
         }
                
     }
