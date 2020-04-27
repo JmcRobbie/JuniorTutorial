@@ -1,6 +1,4 @@
 <launch>
-    <arg name="args1"/>
-    <arg name="args2"/>
 
     <node
         pkg="JuniorTutorial"
@@ -14,7 +12,7 @@
         type="talker"
         name="pub_node1"
         output="screen"
-        args="$(arg args1)"
+        args="topic1"
     />
 
     <node
@@ -22,7 +20,7 @@
         type="talker"
         name="pub_node2"
         output="screen"
-        args="$(arg args2)"
+        args="topic2"
     />
 
 </launch>
