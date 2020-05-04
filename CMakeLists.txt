@@ -8,10 +8,10 @@ find_package(catkin REQUIRED COMPONENTS
    std_msgs
 )
 
-add_message_files(
+# add_message_files(
 )
 
-add_service_files(
+# add_service_files(
 )
 
 generate_messages(
