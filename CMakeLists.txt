@@ -22,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES JuniorTutorial
-#  CATKIN_DEPENDS other_catkin_pkg
+#  CATKIN_DEPENDS roscpp rospy std_msgs message_generation
 #  DEPENDS system_lib
 )
 
