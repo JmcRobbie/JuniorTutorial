@@ -1,0 +1,27 @@
+#include "ros/ros.h"
+#include "std_msgs/Int16.h"
+
+void nums1Callback(const std_msgs::Int16::ConstPtr& msg)
+{
+  ROS_INFO("I heard: [%d] on nums1", msg->data);
+}
+
+void nums2Callback(const std_msgs::Int16::ConstPtr& msg)
+{
+  ROS_INFO("I heard: [%d] on nums2", msg->data);
+}
+
+int main(int argc, char **argv)
+{
+
+  ros::init(argc, argv, "listener");
+
+  ros::NodeHandle n;
+
+  ros::Subscriber sub = n.subscribe("nums1", 1000, nums1Callback);
+  ros::Subscriber sub = n.subscribe("nums2", 1000, nums2Callback);
+
+  ros::spin();
+
+  return 0;
+}
