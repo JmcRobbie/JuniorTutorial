@@ -11,7 +11,7 @@ int main(int argc, char **argv)
   
   ros::NodeHandle n;
 
-  ros::Publisher talker_pub = n.advertise<std_msgs::Int16>("topic", 1000);
+  ros::Publisher talker_pub = n.advertise<std_msgs::Int16>(topic, 1000);
 
   ros::Rate loop_rate(FREQ);
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     
     msg.data = rand() % (MAX - MIN) + MIN;
 
-    ROS_INFO("%s: %d", "topic", msg.data);
+    ROS_INFO("%s: %d", topic, msg.data);
 
     talker_pub.publish(msg);
 
