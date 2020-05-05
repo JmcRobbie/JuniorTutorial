@@ -1,6 +1,9 @@
 #include "ros/ros.h"
 #include "std_msgs/Int16.h"
 
+#define MIN 1
+#define MAX 1000
+
 int main(int argc, char **argv)
 {
   ros::init(argc, argv, "talker");
@@ -16,7 +19,8 @@ int main(int argc, char **argv)
   {
     std_msgs::Int16 msg;
 
-    int a;
+    int a = rand() % (MAX - MIN) + MIN;
+    
     msg.data = a;
 
     ROS_INFO("%d", msg.data);
