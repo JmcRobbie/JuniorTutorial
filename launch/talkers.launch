@@ -1,0 +1,10 @@
+<launch>
+
+  <node pkg="JuniorTutorial" name="talker1" type="talker"/>
+    <remap from="nums" to="nums1"/>
+  </node>
+  <node pkg="JuniorTutorial" name="talker2" type="talker"/>
+    <remap from="nums" to="nums2"/>
+  </node>
+
+</launch>
