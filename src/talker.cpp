@@ -1,6 +1,7 @@
 #include "ros/ros.h"
 #include "std_msgs/Int16.h"
 
+#define HZ 1
 #define MIN 1
 #define MAX 1000
 
@@ -12,16 +13,14 @@ int main(int argc, char **argv)
 
   ros::Publisher talker_pub = n.advertise<std_msgs::Int16>("nums", 1000);
 
-  ros::Rate loop_rate(10);
+  ros::Rate loop_rate(HZ);
 
   int count = 0;
   while (ros::ok())
   {
     std_msgs::Int16 msg;
-
-    int a = rand() % (MAX - MIN) + MIN;
     
-    msg.data = a;
+    msg.data = rand() % (MAX - MIN) + MIN;
 
     ROS_INFO("%d", msg.data);
 
