@@ -4,6 +4,6 @@
   
   <node pkg="JuniorTutorial" name="talker2" type="talker" args="nums2" output="screen"/>
   
-  <node pkg="JuniorTutorial" name="listener" type="listener" output="screen"/>
+  <node pkg="JuniorTutorial" name="listener" type="listener" args="nums1 nums2" output="screen"/>
   
 </launch>
