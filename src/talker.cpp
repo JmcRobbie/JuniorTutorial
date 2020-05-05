@@ -7,34 +7,20 @@ int main(int argc, char **argv)
   
   ros::NodeHandle n;
 
-  ros::Publisher talker_pub = n.advertise<JuniorTutorial::Num>("nums", 1000);
+  ros::Publisher talker_pub = n.advertise<std_msgs::Int16>("nums", 1000);
 
   ros::Rate loop_rate(10);
 
-  /**
-   * A count of how many messages we have sent. This is used to create
-   * a unique string for each message.
-   */
   int count = 0;
   while (ros::ok())
   {
-    /**
-     * This is a message object. You stuff it with data, and then publish it.
-     */
-    std_msgs::String msg;
+    std_msgs::Int16 msg;
 
-    std::stringstream ss;
-    ss << "hello world " << count;
-    msg.data = ss.str();
+    std::int16 a;
+    msg.data = a;
 
-    ROS_INFO("%s", msg.data.c_str());
+    ROS_INFO("%d", msg.data);
 
-    /**
-     * The publish() function is how you send messages. The parameter
-     * is the message object. The type of this object must agree with the type
-     * given as a template parameter to the advertise<>() call, as was done
-     * in the constructor above.
-     */
     chatter_pub.publish(msg);
 
     ros::spinOnce();
@@ -42,7 +28,6 @@ int main(int argc, char **argv)
     loop_rate.sleep();
     ++count;
   }
-
 
   return 0;
 }
