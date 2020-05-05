@@ -3,12 +3,12 @@
 
 void topic1Callback(const std_msgs::Int16::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%d] on %s", msg->data, argv[1]);
+  ROS_INFO("I heard: [%d] on %s", msg->data, "topic1");
 }
 
 void topic2Callback(const std_msgs::Int16::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%d] on %s", msg->data, argv[2]);
+  ROS_INFO("I heard: [%d] on %s", msg->data, "topic2");
 }
 
 int main(int argc, char **argv)
@@ -18,8 +18,8 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Subscriber sub1 = n.subscribe(argv[1], 1000, topic1Callback);
-  ros::Subscriber sub2 = n.subscribe(argv[2], 1000, topic2Callback);
+  ros::Subscriber sub1 = n.subscribe("topic1", 1000, topic1Callback);
+  ros::Subscriber sub2 = n.subscribe("topic2", 1000, topic2Callback);
 
   ros::spin();
 
