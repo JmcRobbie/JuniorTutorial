@@ -16,7 +16,7 @@ int main(int argc, char **argv)
   {
     std_msgs::Int16 msg;
 
-    std::int16 a;
+    std::int a;
     msg.data = a;
 
     ROS_INFO("%d", msg.data);
