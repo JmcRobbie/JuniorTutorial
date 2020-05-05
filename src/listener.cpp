@@ -19,7 +19,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 
   ros::Subscriber sub1 = n.subscribe("topic1", 1000, topic1Callback);
-  ros::Subscriber sub2 = n.subscribe("topic2", 1000, topic2Callback);*/
+  ros::Subscriber sub2 = n.subscribe("topic2", 1000, topic2Callback);
 
   ros::spin();
 
