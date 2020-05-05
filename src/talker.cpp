@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     
     msg.data = rand() % (MAX - MIN) + MIN;
 
-    ROS_INFO("%d", msg.data);
+    ROS_INFO("%s: %d", msg.data, argv[1]);
 
     talker_pub.publish(msg);
 
