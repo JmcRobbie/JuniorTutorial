@@ -3,9 +3,11 @@
   <node pkg="JuniorTutorial" name="talker1" type="talker" output="screen">
     <remap from="nums" to="nums1"/>
   </node>
+  
   <node pkg="JuniorTutorial" name="talker2" type="talker" output="screen">
     <remap from="nums" to="nums2"/>
   </node>
+  
   <node pkg="JuniorTutorial" name="listener" type="listener" output="screen"/>
   
 </launch>
