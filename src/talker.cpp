@@ -20,6 +20,7 @@ int main(int argc, char **argv)
   {
     std_msgs::Int16 msg;
     
+    srand(ros::Time::now())
     msg.data = rand() % (MAX - MIN) + MIN;
 
     ROS_INFO("%s: %d", argv[1], msg.data);
