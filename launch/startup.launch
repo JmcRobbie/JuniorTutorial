@@ -1,8 +1,12 @@
 <launch>
 
-  <node pkg="JuniorTutorial" name="talker1" type="talker" args="nums1" output="screen"/>
+  <node pkg="JuniorTutorial" name="talker1" type="talker" output="screen">
+     <remap from="topic" to="nums1"/>
+  </node>
   
-  <node pkg="JuniorTutorial" name="talker2" type="talker" args="nums2" output="screen"/>
+  <node pkg="JuniorTutorial" name="talker2" type="talker" output="screen">
+     <remap from="topic" to="nums2"/>
+  </node>
   
   <node pkg="JuniorTutorial" name="listener" type="listener" output="screen">
     <remap from="topic1" to="nums1"/>
