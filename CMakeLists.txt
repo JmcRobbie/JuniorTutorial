@@ -7,22 +7,16 @@ find_package(catkin REQUIRED COMPONENTS
    rospy
    std_msgs
 )
-
-catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES JuniorTutorial
-  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+catkin_package(CATKIN_DEPENDS
+   roscpp
+   rospy
+   std_msgs
 )
 
 include_directories(
  include
  ${catkin_INCLUDE_DIRS}
 )
-
-# add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/JuniorTutorial.cpp
-# )
 
 add_executable(talker src/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
