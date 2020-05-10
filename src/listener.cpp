@@ -25,8 +25,8 @@ int main(int argc, char **argv)
 
   int num1, num2 = 0;
   
-  ros::Subscriber sub1 = n.subscribe("topic1", 1000, boost::bind(topicCallback, _1, &num1));
-  ros::Subscriber sub2 = n.subscribe("topic2", 1000, boost::bind(topicCallback, _1, &num2));
+  ros::Subscriber sub1 = n.subscribe<std_msgs::Int16>("topic1", 1000, boost::bind(topicCallback, _1, &num1));
+  ros::Subscriber sub2 = n.subscribe<std_msgs::Int16>("topic2", 1000, boost::bind(topicCallback, _1, &num2));
 
   ros::spin();
 
