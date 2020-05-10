@@ -10,7 +10,7 @@ class ListenerClass {
   
 };
 
-void dataStorage::topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic)
+void ListenerClass::topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, topic);
   num = msg->data; 
