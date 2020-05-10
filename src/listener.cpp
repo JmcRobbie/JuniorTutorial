@@ -6,7 +6,7 @@ class ListenerClass {
     int num1, num2, result = 0;
   
   public:
-    void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num);
+    void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic)
   
 };
 
