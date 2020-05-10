@@ -11,7 +11,7 @@ class ListenerClass {
 void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num)
 {
   ROS_INFO("I heard: [%d] on topic", msg->data);
-  num = msg->data;
+  *num = msg->data;
 }
 
 int main(int argc, char **argv)
