@@ -3,9 +3,8 @@
 
 class ListenerClass {
   
-    int num1, num2, result = 0;
-  
   public:
+    int num1, num2, result = 0;
     void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic);
   
 };
