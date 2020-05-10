@@ -4,8 +4,8 @@
 class ListenerClass {
   
   public:
-    int num1, num2, result = 0;
-    void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic);
+    static int num1, num2, result = 0;
+    static void topicCallback(const std_msgs::Int16::ConstPtr& msg, int &num, std::string topic);
   
 };
 
