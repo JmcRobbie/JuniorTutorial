@@ -69,10 +69,10 @@ int main(int argc, char **argv)
 {
 
   ros::init(argc, argv, "listener");
-
-  ros::Rate rate(FREQ);
   
   ros::NodeHandle n;
+  
+  ros::Rate rate(FREQ);
 
   int num1, num2, result = 0;
   
