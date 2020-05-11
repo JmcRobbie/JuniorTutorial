@@ -87,7 +87,7 @@ int main(int argc, char **argv)
         ROS_ERROR("Failed to select number!");
     }
   
-    ros::spin();
+    ros::spinOnce();
   }
 
   return 0;
