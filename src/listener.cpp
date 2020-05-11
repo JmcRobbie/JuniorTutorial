@@ -1,6 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
-#include <cmath.h>
+#include <math.h>
 
 void callback(const std_msgs::Int32ConstPtr& msg, int* pNum, char* topic)
 {
