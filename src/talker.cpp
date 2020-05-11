@@ -1,7 +1,7 @@
 #include "ros/ros.h"
 #include "std_msgs/Int16.h"
 
-#define FREQ 1
+#define FREQ 3
 #define MIN 1
 #define MAX 1000
 
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
   ros::Publisher talker_pub = n.advertise<std_msgs::Int16>("topic", 1000);
 
-  srand(time(NULL));
+  srand(time(0));
   
   ros::Rate loop_rate(FREQ);
   
