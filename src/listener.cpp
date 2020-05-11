@@ -8,13 +8,13 @@ class ListenerClass {
   
 };
 
-void topic1Callback(const std_msgs::Int16ConstPtr& msg, int &num)
+void topic1Callback(const std_msgs::Int16ConstPtr& msg, std_msgs::Int16 &num)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, "topic1");
   num = msg->data;
 }
 
-void topic2Callback(const std_msgs::Int16ConstPtr& msg, int &num)
+void topic2Callback(const std_msgs::Int16ConstPtr& msg, std_msgs::Int16 &num)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, "topic2");
   num = msg->data;
