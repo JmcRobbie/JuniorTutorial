@@ -1,13 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/Int16.h"
 
-class ListenerClass {
-  
-  public:
-    int num1, num2, result = 0;
-  
-};
-
 void topic1Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, "topic1");
@@ -20,20 +13,26 @@ void topic2Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum)
   *pNum = msg->data;
 }
 
+short int selectNum(short int* pNum1, short int* pNum2)
+{
+  short int result = 0;
+  return result;
+}
+
 int main(int argc, char **argv)
 {
 
   ros::init(argc, argv, "listener");
 
   ros::NodeHandle n;
-  
-  ListenerClass l;
 
   short int num1, num2 = 0;
   
   ros::Subscriber sub1 = n.subscribe<std_msgs::Int16>("topic1", 1000, boost::bind(topic1Callback, _1, &num1));
   ros::Subscriber sub2 = n.subscribe<std_msgs::Int16>("topic2", 1000, boost::bind(topic2Callback, _1, &num2));
 
+  
+  
   ros::spin();
 
   return 0;
