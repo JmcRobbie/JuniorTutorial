@@ -11,14 +11,14 @@ void callback(const std_msgs::Int32ConstPtr& msg, int* pNum, char* topic)
 bool isPrime(int num)
 {
   if(num == 1)
-    return false
+    return false;
   
   for(int i = 2, i <= sqrt(num), i++)
   {
     if(num % i == 0)
-      return false
+      return false;
   }
-  return true
+  return true;
 }
 
 short int selectNum(int* pNum1, int* pNum2)
