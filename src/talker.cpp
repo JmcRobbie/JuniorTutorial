@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "std_msgs/Int16.h"
+#include "std_msgs/Int32.h"
 
 #define FREQ 3
 #define MIN 1
@@ -12,7 +12,7 @@ int main(int argc, char **argv)
   
   ros::NodeHandle n;
 
-  ros::Publisher talker_pub = n.advertise<std_msgs::Int16>("topic", 1000);
+  ros::Publisher talker_pub = n.advertise<std_msgs::Int32>("topic", 1000);
 
   srand(time(0));
   
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
   int count = 0;
   while (ros::ok())
   {
-    std_msgs::Int16 msg;
+    std_msgs::Int32 msg;
     
     msg.data = rand() % (MAX - MIN) + MIN;
 
