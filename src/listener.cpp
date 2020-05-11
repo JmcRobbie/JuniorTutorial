@@ -77,13 +77,11 @@ int main(int argc, char **argv)
   
   if(num1 == 0 || num2 == 0)
     ROS_ERROR("Failed to subscribe!");
-    return EXIT_FAILURE;
   
   result = selectNum(num1, num2);
   
   if(result == 0)
     ROS_ERROR("Failed to select number!");
-    return EXIT_FAILURE;
   
   ros::spin();
 
