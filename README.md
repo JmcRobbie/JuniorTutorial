@@ -1,5 +1,11 @@
 # JuniorTutorial
 
+Cas Kent submission for MUR  Junior Tutorial.
+Launch with:
+```
+$ roslaunch JuniorTutorial startup.launch
+```
+
 This is a ROS & Git introductory challenge for the interested Juniors to work their way through.
 
 Before Juniors can begin work on the autonomous car we need to develop some basic skills with 
