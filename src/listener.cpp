@@ -1,10 +1,24 @@
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
+#include <cmath.h>
 
 void callback(const std_msgs::Int32ConstPtr& msg, int* pNum, char* topic)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, topic);
   *pNum =  msg->data;
+}
+
+bool isPrime(int num)
+{
+  if(num == 1)
+    return false
+  
+  for(int i = 2, i <= sqrt(num), i++)
+  {
+    if(num % i == 0)
+      return false
+  }
+  return true
 }
 
 short int selectNum(int* pNum1, int* pNum2)
