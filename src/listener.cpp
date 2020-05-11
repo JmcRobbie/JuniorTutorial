@@ -29,7 +29,7 @@ int main(int argc, char **argv)
   
   ListenerClass l;
 
-  std_msgs::int16 num1, num2 = 0;
+  std_msgs::Int16 num1, num2 = 0;
   
   ros::Subscriber sub1 = n.subscribe<std_msgs::Int16>("topic1", 1000, boost::bind(topic1Callback, _1, &num1));
   ros::Subscriber sub2 = n.subscribe<std_msgs::Int16>("topic2", 1000, boost::bind(topic2Callback, _1, &num2));
