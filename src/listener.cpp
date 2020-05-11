@@ -75,17 +75,20 @@ int main(int argc, char **argv)
   ros::Subscriber sub1 = n.subscribe<std_msgs::Int32>(argv[1], 1000, boost::bind(callback, _1, &num1, argv[1]));
   ros::Subscriber sub2 = n.subscribe<std_msgs::Int32>(argv[2], 1000, boost::bind(callback, _1, &num2, argv[2]));
   
-  if(num1 == 0 || num2 == 0)
-    ROS_ERROR("Failed to subscribe!");
-  else
+  while(ros::ok())
   {
-    result = selectNum(num1, num2);
+    if(num1 == 0 || num2 == 0)
+      ROS_ERROR("Failed to subscribe!");
+    else
+    {
+      result = selectNum(num1, num2);
 
-    if(result == 0)
-      ROS_ERROR("Failed to select number!");
-  }
+      if(result == 0)
+        ROS_ERROR("Failed to select number!");
+    }
   
-  ros::spin();
+    ros::spin();
+  }
 
   return 0;
 }
