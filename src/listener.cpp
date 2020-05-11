@@ -2,6 +2,8 @@
 #include "std_msgs/Int32.h"
 #include <math.h>
 
+#define FREQ 3
+
 void callback(const std_msgs::Int32ConstPtr& msg, int* pNum, char* topic)
 {
   ROS_INFO("I heard: [%d] on %s", msg->data, topic);
@@ -68,6 +70,8 @@ int main(int argc, char **argv)
 
   ros::init(argc, argv, "listener");
 
+  ros::Rate rate(FREQ);
+  
   ros::NodeHandle n;
 
   int num1, num2, result = 0;
@@ -88,6 +92,7 @@ int main(int argc, char **argv)
     }
   
     ros::spinOnce();
+    rate.sleep();
   }
 
   return 0;
