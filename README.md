@@ -1,6 +1,6 @@
 # JuniorTutorial
 
-Cas Kent submission for MUR  Junior Tutorial
+Cas Kent submission for MUR  Junior Tutorial.
 Launch with:
 ```
 $ roslaunch JuniorTutorial startup.launch
