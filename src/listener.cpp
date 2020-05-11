@@ -1,15 +1,15 @@
 #include "ros/ros.h"
 #include "std_msgs/Int16.h"
 
-void topic1Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum)
+void topic1Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum, char* topic1)
 {
-  ROS_INFO("I heard: [%d] on %s", msg->data, argv[1]);
+  ROS_INFO("I heard: [%d] on %s", msg->data, topic1);
   *pNum =  msg->data;
 }
 
-void topic2Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum)
+void topic2Callback(const std_msgs::Int16ConstPtr& msg, short int* pNum, char* topic2)
 {
-  ROS_INFO("I heard: [%d] on %s", msg->data, argv[2]);
+  ROS_INFO("I heard: [%d] on %s", msg->data, topic2);
   *pNum = msg->data;
 }
 
@@ -28,8 +28,8 @@ int main(int argc, char **argv)
 
   short int num1, num2 = 0;
   
-  ros::Subscriber sub1 = n.subscribe<std_msgs::Int16>(argv[1], 1000, boost::bind(topic1Callback, _1, &num1));
-  ros::Subscriber sub2 = n.subscribe<std_msgs::Int16>(argv[2], 1000, boost::bind(topic2Callback, _1, &num2));
+  ros::Subscriber sub1 = n.subscribe<std_msgs::Int16>(argv[1], 1000, boost::bind(topic1Callback, _1, &num1, argv[1]));
+  ros::Subscriber sub2 = n.subscribe<std_msgs::Int16>(argv[2], 1000, boost::bind(topic2Callback, _1, &num2, argv[2]));
   
   ros::spin();
 
