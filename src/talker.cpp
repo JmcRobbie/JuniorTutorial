@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/Int32.h"
+#include <time.h>
 
 #define FREQ 3
 #define MIN 1
