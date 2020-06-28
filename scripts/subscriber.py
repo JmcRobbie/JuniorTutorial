@@ -5,17 +5,28 @@ from std_msgs.msg import Int16
 
 integers = []
 
+def is_prime(num):
+	if num == 1:
+		return False
+	for i in range(2, int(num**0.5) + 1):
+		if num % i == 0:
+			return False
+	return True
+
+def num_to_print():
+	max_num, min_num = max(integers), min(integers)
+	if is_prime(min_num) and not is_prime(max_num):
+		return min_num
+	return max_num
+
+
 def printer(data):
 	integers.append(data.data)
-	rospy.loginfo("added %d", data.data)
 	if len(integers) == 2:
-		rospy.loginfo("%d and %d" %(integers[0], integers[1]))
-		# do calculations?
+		result = num_to_print()
+		rospy.loginfo("The integer is: %d" %(result))
 		del integers[:]
-		rospy.loginfo("list len is now %d", len(integers))
 
-	if len(integers) > 2:
-		rospy.loginfo("broken")
 
 
 def subscriber():
