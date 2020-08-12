@@ -1,0 +1,4 @@
+<launch> 
+    <node pkg="mur" type="node1.py" name="node1"/>
+    <node pkg="mur" type="node2.py" name="node2"/>
+</launch>
